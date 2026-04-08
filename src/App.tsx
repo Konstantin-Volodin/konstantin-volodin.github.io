@@ -43,6 +43,16 @@ function Portfolio() {
 }
 
 function App() {
+  if (window.location.pathname.toLowerCase() === '/cv.pdf') {
+    window.location.replace('/cv.pdf');
+    return null;
+  }
+
+  if (window.location.pathname.toLowerCase() === '/resume.pdf') {
+    window.location.replace('/cv.pdf');
+    return null;
+  }
+
   const isValentine = window.location.pathname === '/valentine';
 
   return (
