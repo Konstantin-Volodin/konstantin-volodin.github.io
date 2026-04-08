@@ -1,13 +1,3 @@
 # LaTeX build artifacts
 build/
 *.synctex.gz
-
-# Generated outputs
-*.pdf
-*.png
-
-# Utility scripts
-convert_pdfs.py
-
-# Private
-2025-applications/

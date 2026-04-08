@@ -9,6 +9,7 @@ src/static/resume-backup/*
 
 # testing
 /coverage
+.harness/
 
 # production
 /build
