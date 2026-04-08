@@ -1,4 +1,4 @@
-import{r as a,j as n,B as r,t as m,V as E,H as I,x as R,N as b}from"./index-rtd__lHm.js";const tt=b`
+import{r as a,j as n,B as r,t as m,V as E,H as I,x as R,N as b}from"./index-0o0VFchH.js";const tt=b`
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.1); }
 `,et=b`
