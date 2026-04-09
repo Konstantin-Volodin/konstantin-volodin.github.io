@@ -24,6 +24,8 @@
 \definecolor{bodytext}{RGB}{50,50,50} % Slightly gray body text
 \AtBeginDocument{\color{bodytext}}
 
+
+
 % LINKS
 \RequirePackage{hyperref}
 \hypersetup{colorlinks=true,urlcolor=highlight}
@@ -32,10 +34,14 @@
 \RequirePackage[inline]{enumitem}
 \setlength{\tabcolsep}{0in}
 
+
 % SECTION FORMATTING 
 \RequirePackage[nostruts]{titlesec}
 \titlespacing*{\section}{0em}{0.7em}{0em}
-\titleformat{\section}{\color{highlight} \bfseries \scshape \raggedright \normalsize}{}{0em}{}[\vspace{-1em}\hrulefill]
+\titleformat{\section}{
+    \color{highlight} \bfseries \scshape \raggedright \normalsize
+}{}{0em}{}[\vspace{-1em}{\color{highlight}\hrulefill}]
+
 % SUBSECTION FORMATTING
 \titlespacing*{\subsection}{0em}{0em}{0em}
 \titleformat{\subsection}{\color{black}\bfseries}{}{0em}{}[]
@@ -49,13 +55,25 @@
 % SUBTEXT
 \newcommand{\subtext}[1]{\textit{#1}\par\vspace{-.5em}}
 
+% SUMMARY PARAGRAPH
+\newcommand{\summaryparagraph}[1]{
+    {\footnotesize\itshape\linespread{1}\selectfont #1\par}
+}
+
+
 % EXPERIENCE HEADER
 % \experienceheader{role}{org}{dates}{team (optional)}
 \newcommand{\experienceheader}[4]{%
-    \subsection{{\mediumsize{#1}}
-    {\normalfont \textcolor{gray}{\textit{#2}}} 
-    \hfill {\normalfont \textcolor{gray}{#3}}}%
-    \ifx&#4&\else{\small \textcolor{gray}{\textit{#4}} \par\vspace{-.5em}}\fi%
+    \subsection{%
+        {\mediumsize{#1}}%
+        {\normalfont  \textcolor{gray}{\textit{#2}}}%
+        \hfill
+        {\normalfont \small \textcolor{gray}{#3}}%
+    }%
+    \ifx&#4&\vspace{1pt}%
+    \else
+        {\small \textcolor{gray}{\textit{#4}}\par\vspace{-5pt}}%
+    \fi
 }
 
 % EXPERIENCE SUB-ENTRY (for multiple positions under one role)
@@ -67,9 +85,9 @@
 % tighter spacing than itemize
 \setlist[itemize]{align=parleft,left=0pt..1em}
 \newenvironment{zitemize}{
-\vspace{0.15em}
-\small\begin{itemize} \itemsep 0pt \parskip 0pt \parsep 0pt}
-{\end{itemize}\vspace{-0.15em}}
+\vspace{1pt}
+\small\begin{itemize} \itemsep 0pt \parskip 1.75pt \parsep 0pt}
+{\end{itemize}\vspace{-2.75pt}}
 
 % NO PAGE NUMBER
 \pagenumbering{gobble}
